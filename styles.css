@@ -74,10 +74,36 @@ img {
 }
 
 .nutrition-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  place-content: start;
 }
 
-.nutrition-row:nth-child(2n) p {
-   outline: 1px solid red;
+.nutrition-row p:nth-child(2n) {
+  color: var(--clr-primary-nutmeg);
+}
+
+.nutrition-row p:nth-child(2n + 1) {
+  margin-inline-start: 2rem;
+}
+
+.nutrition-row:not(:last-child),
+.instructions,
+.ingredients {
+  border-bottom: 1px solid var(--clr-neutral-light-grey);
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    place-content: start;
+    align-items: start;
+  }
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
