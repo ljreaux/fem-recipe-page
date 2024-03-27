@@ -25,23 +25,28 @@ body {
   display: grid;
   place-items: center;
   font-family: "Outfit";
+  line-height: 1.5em;
 }
 
 h1,
-h2,
-h3,
-h4 {
+h2 {
   font-family: "Young Serif";
   font-weight: 600;
   color: var(--clr-neutral-dark-charcoal);
 }
 
-h3 {
-  color: var(--clr-primary-raspberry);
+h1 {
+  font-size: 2.75rem;
 }
 
 h2 {
+  font-size: 2rem;
   color: var(--clr-primary-nutmeg);
+}
+
+h3 {
+  color: var(--clr-primary-raspberry);
+  font-weight: 600;
 }
 
 li,
@@ -49,16 +54,34 @@ p {
   color: var(--clr-neutral-wenge-brown);
 }
 
+ol li::marker {
+  font-weight: 600;
+}
+
+ul,
+ol {
+  padding-inline: 1.25rem;
+}
+
+li {
+  padding-left: 1.5rem;
+  margin-block: 0.5rem;
+}
+
+li::marker {
+  color: var(--clr-primary-nutmeg);
+}
+
 main {
-  width: 60%;
+  width: 45%;
   background-color: var(--clr-neutral-white);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin: 3rem;
+  border-radius: 1rem;
+  padding: 3rem;
+  margin-block: 6rem;
 }
 
 img {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   max-width: 100%;
 }
 
@@ -66,11 +89,19 @@ img {
   font-weight: 600;
 }
 
+.description {
+  margin-block-end: 2rem;
+}
+
 .prep {
   background-color: var(--clr-neutral-eggshell);
   padding: 0.5rem 1rem;
   margin: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+}
+
+.prep li::marker {
+  color: var(--clr-primary-raspberry);
 }
 
 .nutrition-row {
@@ -82,6 +113,8 @@ img {
 
 .nutrition-row p:nth-child(2n) {
   color: var(--clr-primary-nutmeg);
+  font-weight: 600;
+  margin-inline: 0.5rem;
 }
 
 .nutrition-row p:nth-child(2n + 1) {
@@ -105,5 +138,26 @@ img {
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  h1 {
+    line-height: 1em;
+  }
+
+  img {
+    border-radius: 0;
+  }
+
+  main *:not(img) {
+    padding-inline: 1rem 0.5rem;
+  }
+  .bold {
+    padding-inline: 0;
+  }
+  .nutrition-row p:nth-child(2n + 1) {
+    margin-inline-start: 0;
+  }
+  .prep ul {
+    padding-inline: 2rem;
   }
 }
